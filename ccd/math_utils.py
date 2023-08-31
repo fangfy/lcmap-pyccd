@@ -38,7 +38,7 @@ def adjusted_variogram(dates, observations):
     for idx in range(dates.shape[0]):
         var = dates[1 + idx:] - dates[:-idx - 1]
 
-        majority = mode(var)[0][0]
+        majority = mode(var)[0]#[0]
 
         if majority > 30:
             diff = observations[:, 1 + idx:] - observations[:, :-idx - 1]
@@ -179,7 +179,7 @@ def mask_duplicate_values(vector):
     Returns:
         1-d boolean ndarray
     """
-    mask = np.zeros_like(vector, dtype=np.bool)
+    mask = np.zeros_like(vector, dtype=bool)
     mask[np.unique(vector, return_index=True)[1]] = 1
 
     return mask

@@ -236,7 +236,7 @@ def standard_procedure(dates, observations, fitter_fn, quality, proc_params):
     # and qa information and convert kelvin to celsius.
     # We then persist the processing mask through subsequent operations as
     # additional data points get identified to be excluded from processing.
-    observations[thermal_idx] = kelvin_to_celsius(observations[thermal_idx])
+    #observations[thermal_idx] = kelvin_to_celsius(observations[thermal_idx])
 
     # There's two ways to handle the boolean mask with the windows in
     # subsequent processing:
